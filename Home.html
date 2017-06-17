@@ -4,9 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<title>Home Automation Feeds Application</title>
+<title>Home Automation Feeds Application</title>
 </head>
 <style>
+body
+{
+	background-color: pink;
+}
 h3
 {
 	color: red;
@@ -30,44 +34,63 @@ table
 .room2
 {
 	width: 150px;
-	height: 120px;
+	height: 200px;
 	border: 2px solid blue;
 	text-align: center;
 }
 .room3
 {
 	width: 150px;
-	height: 120px;
+	height: 200px;
 	border: 2px solid blue;
 	text-align: center;
 }
 .room4
 {
 	width: 150px;
-	height: 120px;
+	height: 200px;
 	border: 2px solid blue;
 	text-align: center;
 }
 .room5
 {
 	width: 150px;
-	height: 120px;
+	height: 200px;
 	border: 2px solid blue;
 	text-align: center;
 }
 </style>
 <body>
-
-<div class="Home">
+<div class="">
+<div class="Home text-center">
 	<h3><center>Home Automation Application</center></h3>
 	<div class="room1">
 	<h4>Room 1</h4>
-	<table name=tab>
+	<table name=tab id="myTable">
 		<th>Motion</th>
-		<th><i class="fa fa-toggle-on" aria-hidden="true"></i></th>
+		<th><i class="fa fa-toggle-on" id="MOTION_1" aria-hidden="true"></i></th>
 	    <tr>
 	    <td>Temperature</td>
+		<td><input type="text" id="temp1" name="Temperature"span style="width:20px;color: #aaaaaa;"></td>
+		</tr>
+        <td>Lighting</td>
 		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Air Conditioning</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Door</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+	    </table></div><br><br>
+	<div class="room2">
+	<h4>Room 2</h4>
+        <table name=tab id="myTable">
+		<th>Motion</th>
+		<th><i class="fa fa-toggle-on" id="MOTION_2" aria-hidden="true"></i></th>
+	    <tr>
+	    <td>Temperature</td>
+		<td><input type="text" id="temp2" name="Temperature"  span style="width:20px;color: #aaaaaa;"></td>
 		</tr>
         <td>Lighting</td>
 		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
@@ -79,12 +102,72 @@ table
 		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
 		</tr>
 	    </table></div><br>
-	<div class="room2">Room 2</div><br>
-	<div class="room3">Room 3</div><br>
-	<div class="room4">Room 4</div><br>
-	<div class="roomx">Room 5</div><br>
-	<p></p> 
-</div>
 
+	</div><br>
+	<div class="room3"><h4>Room 3</h4>
+        <table name=tab id="myTable">
+		<th>Motion</th>
+		<th><i class="fa fa-toggle-on" id="MOTION_3" aria-hidden="true"></i></th>
+	    <tr>
+	    <td>Temperature</td>
+		<td><input type="text" id="temp3" name="Temperature" span style="width:20px;color: #aaaaaa;"></td>
+		</tr>
+        <td>Lighting</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Air Conditioning</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Door</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+	    </table>
+	    </div>
+	</div><br>
+ 	</div><br>
+	<div class="room4">
+	<h4>Room 4</h4>
+        <table name=tab id="myTable">
+		<th>Motion</th>
+		<th><i class="fa fa-toggle-on" id="MOTION_4" aria-hidden="true"></i></th>
+	    <tr>
+	    <td>Temperature</td>
+		<td><input type="text" id="temp4" name="Temperature" span style="width:20px;color: #aaaaaa;"></td>
+		</tr>
+        <td>Lighting</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Air Conditioning</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Door</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+	    </table></div></div></div>
+	</div>
+	</div><br>
+	</div><br>
+	<div class="room5"><h4>Room 5</h4>
+        <table name=tab id="myTable">
+		<th>Motion</th>
+		<th><i class="fa fa-toggle-on" id="MOTION_5" aria-hidden="true"></i></th>
+	    <tr>
+	    <td>Temperature</td>
+		<td><input type="text" id="temp5" name="Temperature"  span style="width:20px;color: #aaaaaa;"></td>
+		</tr>
+        <td>Lighting</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Air Conditioning</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+        <td>Door</td>
+		<td><i class="fa fa-toggle-on" aria-hidden="true"></i></td>
+		</tr>
+	    </table></div><br>
+	</div> 
+	</div>
+	</div><br>
+	</div>
 </body>
 </html>
