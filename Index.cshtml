@@ -1,0 +1,288 @@
+﻿<html>
+<head>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        h3 {
+            color: red;
+        }
+
+        h4 {
+            color: Green;
+        }
+
+        table {
+            padding-left: 10px;
+        }
+
+        .room1 {
+            width: 150px;
+            height: 120x;
+            border: 2px solid blue;
+            text-align: center;
+        }
+
+        .room2 {
+            width: 150px;
+            height: 200px;
+            border: 2px solid blue;
+            text-align: center;
+        }
+
+        .room3 {
+            width: 150px;
+            height: 200px;
+            border: 2px solid blue;
+            text-align: center;
+        }
+
+        .room4 {
+            width: 150px;
+            height: 200px;
+            border: 2px solid blue;
+            text-align: center;
+        }
+
+        .room5 {
+            width: 150px;
+            height: 200px;
+            border: 2px solid blue;
+            text-align: center;
+        }
+    </style>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            refresh();
+
+           // setinterval(refresh,10000)
+            });
+
+
+        function refresh() {
+
+
+            $.ajax({
+                url: "/Home/GetMotionSensorDetail",
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+
+                    $('#myTable4 tr').remove();
+                    $.each(data, function (i, item) {
+
+                        $('#myTable4').append('<tr><td>' + item.id + '</td><td>' + item.value + '</td><td></tr>');
+
+                    });
+
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+            $.ajax({
+                url: "/Home/GetTempSensorDetail",
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+
+                    $('#myTable3 tr').remove();
+                    $.each(data, function (i, item) {
+
+                        $('#myTable3').append('<tr><td>' + item.id + '</td><td><input style="width:35px " type="text" value="' + item.value + '"</input></td><td></tr>');
+
+                    });
+
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+            $.ajax({
+                url: "/Home/GetACSensorDetail",
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+
+                    $('#myTable tr').remove();
+                    $.each(data, function (i, item) {
+                        //var par = 'postfunc("' + 'acstatus'+
+                        $('#myTable').append('<tr><td>' + item.id + '</td><td onClick="postfunc("acstatus","' + item.id + '","' + item.value + '")">' + item.value + '</td><td</tr>');
+
+                    });
+
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+
+            $.ajax({
+                url: "/Home/GetDoorSensorDetail",
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+
+                    $('#myTable2 tr').remove();
+                    $.each(data, function (i, item) {
+
+                        $('#myTable2').append('<tr><td>' + item.id + '</td><td>' + item.value + '</td><td></tr>');
+
+                    });
+
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+            $.ajax({
+                url: "/Home/GetLightSensorDetail",
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+
+                    $('#myTable1 tr').remove();
+                    $.each(data, function (i, item) {
+
+                        $('#myTable1').append('<tr><td>' + item.id + '</td><td>' + item.value + '</td><td></tr>');
+
+                    });
+
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+
+
+
+            //$.ajax({
+            //    url: "/Home/homepage",
+            //    type: "GET",
+            //    dataType: 'json',
+                 // data:
+            //    success: function (data) {
+            //        $('#myTable1 tr').remove();
+
+            //        $.each(data, function (i, item) {
+
+            //            $('#myTable1').append('<tr><td>' + item.id + '</td><td>' + item.value + '</td><td>' + item.timestamp + '</tr>');
+
+            //        });
+
+
+            //    },
+            //    error: function () {
+            //        alert("Error");
+            //    }
+            //});
+            function postfunc(a, b, c) {
+                debugger;
+                  $.ajax({
+                url: "/Home/GetLightSensorDetail",
+                type: "GET",
+                dataType: 'json',
+                data: { type :a,idq:b,valueq:c},
+                success: function (data) {
+
+                  
+                    refresh();
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+
+            }
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+   
+
+    
+
+    @*<table id="myTable"></table>
+    &nbsp;
+    &nbsp;
+   
+    <table id="myTable1"></table>
+    &nbsp;
+    &nbsp;
+    <table id="myTable2"></table>
+    &nbsp;
+    &nbsp;
+    <table id="myTable3"></table>
+    &nbsp;
+    &nbsp;
+    <table id="myTable4"></table>
+    &nbsp;
+    &nbsp;*@  
+
+    <div class="">
+        <div class="Home text-center">
+            <h3><center>Home Automation Application</center></h3>
+            <div class="room1">
+                <h4>AC</h4>
+                <table name=tab id="myTable">
+                  
+                </table>
+            </div><br><br>
+            <div class="room2">
+                <h4>LIGHT</h4>
+                <table name=tab id="myTable1">
+                 
+                    
+                </table>
+            </div><br>
+
+        </div><br>
+        <div class="room3">
+            <h4>DOOR</h4>
+            <table name=tab id="myTable2">
+                
+               
+            </table>
+        </div>
+    </div><br>
+    </div><br>
+    <div class="room4">
+        <h4>TEMPERATURE</h4>
+        <table name=tab id="myTable3"></table>
+    </div></div></div>
+    </div>
+    </div><br>
+    </div><br>
+    <div class="room5">
+        <h4>MOTION</h4>
+        <table name=tab id="myTable4">
+           
+                   </table>
+    </div><br>
+    </div>
+    </div>
+    </div><br>
+    </div>
+
+</body>
+
+</html>
