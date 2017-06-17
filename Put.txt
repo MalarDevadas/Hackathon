@@ -1,0 +1,14 @@
+public  JsonResult PostAction(string type, string idq, string valueq)
+        {
+            type = "lightstatus"; idq = "LIGHT_5"; valueq = "1";
+            ApplianceStatus p = new ApplianceStatus { id = idq, value = valueq };
+
+            //var type = "tempsensor";
+            var response = GetClient(type).PutAsJsonAsync(type, p).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                //
+            }            
+
+            return new JsonResult();
+        }
